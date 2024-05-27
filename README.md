@@ -6,29 +6,38 @@ Dependencies:
 
 For seamless execution in Colab, ensure you have the following dependencies installed:
 
-bash
-
-!pip install transformers datasets torch
-!pip install -q -U bitsandbytes
-!pip install transformers[torch] accelerate -U
-!pip install -q evaluate
-!pip install peft
+🤗 Transformers: Crucial for fine-tuning and deploying NLP models.
+🤗 Datasets: Provides access to various datasets, including AG News.
+🤗 Accelerate: Enables efficient experimentation with distributed training.
+bitsandbytes: Utilized for Low-Rank Adaptation (LoRa) techniques.
+evaluate: Helpful for evaluating model performance.
+peft: Package for Pre-Training Encoder-Free Transformers (PEFT).
 
 Libraries:
 
-    🤗 Transformers: Crucial for fine-tuning and deploying NLP models.
-    🤗 Datasets: Provides access to various datasets, including AG News.
-    🤗 Accelerate: Enables efficient experimentation with distributed training.
-    bitsandbytes: Utilized for Low-Rank Adaptation (LoRa) techniques.
-    evaluate: Helpful for evaluating model performance.
-    peft: Package for Pre-Training Encoder-Free Transformers (PEFT).
-
+    !pip install transformers datasets torch
+    !pip install -q -U bitsandbytes
+    !pip install transformers[torch] accelerate -U
+    !pip install -q evaluate
+    !pip install peft
+    import re
+    import bitsandbytes
+    from datasets import load_dataset
+    import transformers
+    import accelerate
+    from peft import prepare_model_for_kbit_training, LoraConfig, get_peft_model, PeftModel
+    from transformers import AutoModelForCausalLM, BitsAndBytesConfig, AutoTokenizer
+    from transformers import AutoModelForSequenceClassification, BertTokenizer
+    from transformers import BertForSequenceClassification, Trainer, TrainingArguments
+    import torch
+    from torch.utils.data import DataLoader
+    import numpy as np
+    import evaluate
+    
 Usage:
 
-    Import required libraries and dependencies.
-    Load the AG News dataset using load_dataset from datasets.
-    Prepare the BERT model for training using prepare_model_for_kbit_training.
-    Fine-tune the BERT model for sequence classification using Trainer from transformers.
-    Evaluate the fine-tuned model's performance using appropriate metrics.
-
-By following these steps, you can efficiently fine-tune BERT for sequence classification tasks using LoRa techniques.
+    1. Import required libraries and dependencies.
+    2. Load the AG News dataset using load_dataset from datasets.
+    3. Prepare the BERT model for training using prepare_model_for_kbit_training.
+    4. Fine-tune the BERT model for sequence classification using Trainer from transformers.
+    5. Evaluate the fine-tuned model's performance using appropriate metrics.
