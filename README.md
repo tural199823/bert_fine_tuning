@@ -6,12 +6,12 @@ Dependencies:
 
 For seamless execution in Colab, ensure you have the following dependencies installed:
 
-🤗 Transformers: Crucial for fine-tuning and deploying NLP models.
-🤗 Datasets: Provides access to various datasets, including AG News.
-🤗 Accelerate: Enables efficient experimentation with distributed training.
-bitsandbytes: Utilized for Low-Rank Adaptation (LoRa) techniques.
-evaluate: Helpful for evaluating model performance.
-peft: Package for Pre-Training Encoder-Free Transformers (PEFT).
+    🤗 Transformers: Crucial for fine-tuning and deploying NLP models.
+    🤗 Datasets: Provides access to various datasets, including AG News.
+    🤗 Accelerate: Enables efficient experimentation with distributed training.
+    bitsandbytes: Utilized for Low-Rank Adaptation (LoRa) techniques.
+    evaluate: Helpful for evaluating model performance.
+    peft: Package for Pre-Training Encoder-Free Transformers (PEFT).
 
 Libraries:
 
